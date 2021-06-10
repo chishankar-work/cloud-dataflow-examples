@@ -197,7 +197,7 @@ def run(input_subscription, topic, pipeline_args=None):
 
 if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/chishankar/Documents/testCode/credentials3.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "CREDENTIALS_PATH"
 
     # args
     parser = argparse.ArgumentParser()
