@@ -157,10 +157,10 @@ def run(input_subscription, topic, pipeline_args=None):
         pipeline_args,
         streaming=True,
         save_main_session=True,
-        job_name="stateful-dofn-taxi-test-after-count-5k",
+        job_name="stateful-dofn-taxi-test-1",
         num_workers=10,
         max_num_workers=10)
-
+    
     # Trigger after processing time (seconds)
     global_window_after_processing_time = 60
     global_window_after_count = 5000
@@ -197,7 +197,6 @@ def run(input_subscription, topic, pipeline_args=None):
 
 if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "CREDENTIALS_PATH"
 
     # args
     parser = argparse.ArgumentParser()
@@ -220,3 +219,7 @@ if __name__ == "__main__":
         known_args.topic,
         pipeline_args,
     )
+
+'''
+python3 stateful-combine-example.py  --region $REGION  --input_subscription $INPUT_SUBSCRIPTION —topic $PUBLISH_TOPIC --runner DataflowRunner --project $PROJECT  --temp_location $TEMP_LOCATION
+'''
