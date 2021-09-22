@@ -2,8 +2,9 @@ import logging
 import apache_beam as beam
 from apache_beam import Pipeline, io
 from apache_beam.options.pipeline_options import PipelineOptions
-from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector.utils.custom_options import CustomBeamOptions
+from streaming_examples.write_to_csql_examples.utils.custom_options import CustomBeamOptions
 from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector.write_to_csql_transform import WriteToCloudSqlDoFn
+from streaming_examples.write_to_csql_examples.utils.common_tags import dlq_message_tag
 
 def run(argv=None):
 
@@ -28,7 +29,7 @@ def run(argv=None):
 
     # Write to CloudSQL
     write_to_cloud_sql = pb_messages | beam.ParDo(
-        WriteToCloudSqlDoFn(db_config)).with_outputs(WriteToCloudSqlDoFn.dlq_message_tag)
+        WriteToCloudSqlDoFn(db_config)).with_outputs(dlq_message_tag)
 
     # Get dead letter collection of records
     dlq_records = write_to_cloud_sql[WriteToCloudSqlDoFn.dlq_message_tag]

@@ -2,7 +2,8 @@ import logging
 from apache_beam.transforms import DoFn
 from apache_beam import pvalue
 from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector.exceptions.cloud_sql_exceptions import CloudSqlException
-from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector.utils.mysql_connection_handler import SqlEngine
+from streaming_examples.write_to_csql_examples.utils.mysql_connection_handler import SqlEngine
+from streaming_examples.write_to_csql_examples.utils.common_tags import dlq_message_tag
 
 class WriteToCloudSqlDoFn(DoFn):
     """Write to CloudSQL
@@ -13,8 +14,7 @@ class WriteToCloudSqlDoFn(DoFn):
     Yields:
         PCollection: Collection of pelements headed for Dead Letter Queue
     """
-    dlq_message_tag = "dlq_messages"
-
+    
     def __init__(self, db_config):
         self.batch_size = 500
         self.db_config = db_config
@@ -37,7 +37,7 @@ class WriteToCloudSqlDoFn(DoFn):
         except CloudSqlException as csql_exp:
             # Dead letter the batch within the bundle that threw an error inserting in Cloud SQL
             for r in self.records:
-                yield pvalue.TaggedOutput(self.dlq_message_tag, r)
+                yield pvalue.TaggedOutput(dlq_message_tag, r)
 
             self.records = []
 
