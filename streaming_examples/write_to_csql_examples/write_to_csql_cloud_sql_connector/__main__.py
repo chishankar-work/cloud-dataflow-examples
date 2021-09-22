@@ -1,5 +1,5 @@
 import logging
-from write_to_csql_examples.write_to_csql import write_to_sql_pipeline
+from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector import write_to_sql_pipeline
 
 if __name__ == '__main__':
   logging.getLogger().setLevel(logging.INFO)

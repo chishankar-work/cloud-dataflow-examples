@@ -1,9 +1,9 @@
 import logging
 import apache_beam as beam
-from apache_beam import Pipeline, io, pvalue
+from apache_beam import Pipeline, io
 from apache_beam.options.pipeline_options import PipelineOptions
-from write_to_csql_examples.write_to_csql.utils.custom_options import CustomBeamOptions
-from write_to_csql_examples.write_to_csql.write_to_csql_transform import WriteToCloudSqlDoFn
+from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector.utils.custom_options import CustomBeamOptions
+from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector.write_to_csql_transform import WriteToCloudSqlDoFn
 
 def run(argv=None):
 

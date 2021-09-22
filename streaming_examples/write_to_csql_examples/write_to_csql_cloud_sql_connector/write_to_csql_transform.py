@@ -1,8 +1,8 @@
 import logging
 from apache_beam.transforms import DoFn
 from apache_beam import pvalue
-from write_to_csql_examples.write_to_csql.exceptions.cloud_sql_exceptions import CloudSqlException
-from write_to_csql_examples.write_to_csql.utils.mysql_connection_handler import SqlEngine
+from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector.exceptions.cloud_sql_exceptions import CloudSqlException
+from streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector.utils.mysql_connection_handler import SqlEngine
 
 class WriteToCloudSqlDoFn(DoFn):
     """Write to CloudSQL

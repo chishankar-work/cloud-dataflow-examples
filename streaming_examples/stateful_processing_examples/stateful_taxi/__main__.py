@@ -1,4 +1,4 @@
-from stateful_processing_examples.stateful_taxi_example import stateful_combine_example
+from streaming_examples.stateful_processing_examples.stateful_taxi import stateful_combine_example
 import argparse
 import logging
 

@@ -5,4 +5,4 @@ setuptools.setup(
     version='0.0.1',
     description='Pub/Sub dead lettering example. Multi-output ParDo.',
     packages= [
-        'pub_sub_dead_letter_pattern'])
+        'dead_letter_pattern'])

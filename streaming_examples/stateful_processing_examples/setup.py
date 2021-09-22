@@ -5,4 +5,4 @@ setuptools.setup(
     version='0.0.1',
     description='Stateful processing examples',
     packages= [
-        'stateful_taxi_example'])
+        'stateful_taxi'])

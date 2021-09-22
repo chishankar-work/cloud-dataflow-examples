@@ -5,8 +5,8 @@ import apache_beam as beam
 from apache_beam import window
 from apache_beam import trigger
 from apache_beam.options.pipeline_options import PipelineOptions
-from stateful_processing_examples.stateful_taxi_example.utils.dofns import SetTaxiKeyFn, StatefulParDoFn, FormatMetricsData
-from stateful_processing_examples.stateful_taxi_example.utils.combinefns import GetCurrentJobMetrics
+from streaming_examples.stateful_processing_examples.stateful_taxi.utils.dofns import SetTaxiKeyFn, StatefulParDoFn, FormatMetricsData
+from streaming_examples.stateful_processing_examples.stateful_taxi.utils.combinefns import GetCurrentJobMetrics
 
 def run(input_subscription, topic, pipeline_args=None):
     # Pipeline options
@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--topic",
-        help="The Cloud Pub/Sub topic to publish dead letter messages.\n"
+        help="The Cloud Pub/Sub topic to publish messages.\n"
              '"projects/<PROJECT_NAME>/subscriptions/<SUBSCRIPTION_NAME>".',
     )
 

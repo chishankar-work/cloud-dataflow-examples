@@ -5,6 +5,6 @@ setuptools.setup(
     version='0.0.1',
     description='Write to csql example',
     packages= [
-        'write_to_csql',
-        'write_to_csql.exceptions',
-        'write_to_csql.utils'])
+        'write_to_csql_cloud_sql_connector',
+        'write_to_csql_cloud_sql_connector.exceptions',
+        'write_to_csql_cloud_sql_connector.utils'])

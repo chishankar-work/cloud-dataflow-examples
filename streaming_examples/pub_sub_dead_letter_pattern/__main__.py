@@ -1,5 +1,5 @@
 import logging
-from pub_sub_dead_letter_pattern import dead_letter_streaming_example
+from streaming_examples.pub_sub_dead_letter_pattern import dead_letter_streaming_example
 import argparse
 
 if __name__ == '__main__':
