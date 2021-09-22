@@ -1,5 +1,11 @@
-# cloud-dataflow-examples
+# cloud_dataflow_examples
 A repository for Apache Beam/Cloud Dataflow examples.
+
+## Getting Started
+
+1. `cd cloud_dataflow_examples`
+2. `sudo pip3 install -r requirements.txt`
+3. Run the pipelines with the parameters required!
 
 ## Directory
 
