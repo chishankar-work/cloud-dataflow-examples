@@ -5,47 +5,25 @@ A repository for Apache Beam/Cloud Dataflow examples.
 
 1. `cd cloud_dataflow_examples`
 2. `sudo pip3 install -r requirements.txt`
-3. Run the pipelines with the parameters required
+3. Run the pipelines with the parameters required. Example commands are available on the pipeline README's.
 
 ## Directory
 
 *   streaming_examples
     *   pub_sub_dead_letter_pattern
+        *   [Pub/Sub Dead-Letter Workaround](streaming_examples/pub_sub_dead_letter_pattern/README.md)
 
-        ```bash
-        python3 -m streaming_examples.pub_sub_dead_letter_pattern \
-            --input_subscription $INPUT_SUBSCRIPTION \
-            --dead_letter_topic $DEAD_LETTER_TOPIC \
-            --region $REGION \
-            --runner $RUNNER \
-            --project $PROJECT \
-            --temp_location $TEMP_LOCATION 
-        ```
     *   stateful_processing_examples
-        *   stateful_taxi
-            ```bash
-            python3 -m streaming_examples.stateful_processing_examples.stateful_taxi \
-                --input_subscription $INPUT_SUBSCRIPTION \
-                --topic $PUBLISH_TOPIC \
-                --region $REGION \
-                --runner $RUNNER \
-                --project $PROJECT \
-                --temp_location $TEMP_LOCATION 
-            ```
-    *   write_to_csql_examples
-        * write_to_csql_cloud_sql_connector
+        *   [Stateful Taxi Status](streaming_examples/stateful_processing_examples/README.md)
 
-            ```bash
-            python3 -m streaming_examples.write_to_csql_examples.write_to_csql_cloud_sql_connector \
-                --region $REGION 
-                --input_subscription $INPUT_SUBSCRIPTION 
-                --dead_letter_topic $PUBLISH_TOPIC 
-                --runner $RUNNER
-                --project $PROJECT 
-                --temp_location $TEMP_LOCATION 
-                --mysql_connection_name $MYSQL_CONNECTION_NAME 
-                --mysql_user $MYSQL_USER 
-                --mysql_pass $MYSQL_PASS 
-                --mysql_db $MYSQL_DB 
-                --streaming true
-            ```
+    *   write_to_csql_examples
+        *   [Pub/Sub Read -> Write CloudSQL:MySQL via CloudSql Connector](streaming_examples/write_to_csql_examples/write_to_csql_cloud_sql_connector/README.md)
+            
+        *   [Pub/Sub Read -> Write CloudSQL:MySQL via jdbcIO](streaming_examples/write_to_csql_examples/write_to_csql_jdbcio/README.md)
+
+If you have any questions, feel free to open an issue. 
+
+## Articles
+
+*   [Fine-tuning Pub/Sub performance with batch and flow control settings](https://medium.com/google-cloud/pub-sub-flow-control-batching-9ba9a75bce3b)
+*   [Stateful Processing In Apache Beam/Cloud Dataflow](https://medium.com/google-cloud/stateful-processing-in-apache-beam-cloud-dataflow-109d1880f76a)
