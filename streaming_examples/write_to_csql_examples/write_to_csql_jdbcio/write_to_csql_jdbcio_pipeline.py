@@ -13,7 +13,7 @@ from streaming_examples.write_to_csql_examples.write_to_csql_jdbcio.taxi import 
 
 
 def run(argv=None):
-  logging.getLogger().setLevel(logging.DEBUG)
+  logging.getLogger().setLevel(logging.INFO)
   pipeline_options = PipelineOptions()
   max_window_length_time_seconds = 10
   max_window_length_size_elements = 100

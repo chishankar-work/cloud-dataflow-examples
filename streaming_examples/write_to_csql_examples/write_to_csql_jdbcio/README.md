@@ -37,3 +37,9 @@ python3 -m streaming_examples.write_to_csql_examples.write_to_csql_jdbcio \
     --save_main_session true \
     --performance_runtime_type_check true # Read documentation on when to use.
 ```                
+
+## Helpful Links
+
+* [Multi-Lanugage Pipelines - Beam Documentation](http://beam.apache.org/documentation/programming-guide/#multi-language-pipelines)
+*  [apache_beam.io.jdbc module - Beam Documentation](https://beam.apache.org/releases/pydoc/2.29.0/apache_beam.io.jdbc.html)   
+* [Multi-language Dataflow pipelines enabled by new, faster architecture - Google Cloud Blog](https://cloud.google.com/blog/products/data-analytics/multi-language-sdks-for-building-cloud-pipelines)
